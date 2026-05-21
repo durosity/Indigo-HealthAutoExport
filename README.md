@@ -12,8 +12,7 @@ The plugin runs an embedded HTTP server that listens for JSON POSTs from Health 
 - **Body measurements, heart, respiratory, sleep, vitals, other** — separate device types for each category, each with three-day history plus "latest known value" states
 - **Multi-user support** — different devices can subscribe to different `X-User-ID` values, so one Indigo instance can track multiple people
 - **Per-day clear actions** — clear today, yesterday, or two days ago without losing the rest of the history
-- **Variable-backed targets** — activity targets can be hard-coded integers or the name of an Indigo variable, useful for adjusting goals across the house from a single source
-- **HomeKit-friendly device types** — sensor-based devices that bridge cleanly through the HomeKit bridge plugin
+
 
 ## Requirements
 
