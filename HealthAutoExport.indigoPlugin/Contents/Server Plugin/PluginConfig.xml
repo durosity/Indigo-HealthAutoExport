@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginConfig>
+	<Field id="httpPort" type="textfield" defaultValue="8888">
+		<Label>HTTP Port:</Label>
+	</Field>
+	<Field id="authToken" type="textfield" defaultValue="">
+		<Label>Auth Token (optional):</Label>
+		<Description>If set, requests must include header "Authorization: Bearer TOKEN" (or X-Auth-Token / ?token=)</Description>
+	</Field>
+	<Field id="showDebugInfo" type="checkbox" defaultValue="false">
+		<Label>Show debug information in log</Label>
+	</Field>
+	<Field id="instructions" type="label" fontSize="small">
+		<Label>The plugin runs an HTTP server that receives health data.
+
+Configure a Health Auto Export REST API automation to POST JSON to:
+http://YOUR_INDIGO_SERVER_IP:8888/health
+
+Add custom header: X-User-ID with your user identifier (e.g., Mike)
+Or use URL parameter: ?userId=Mike
+
+Recommended: Export Version 2, Summarize Data ON, Date Range "Default".</Label>
+	</Field>
+</PluginConfig>

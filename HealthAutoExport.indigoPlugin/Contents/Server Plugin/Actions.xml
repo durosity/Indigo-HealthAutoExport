@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Actions>
+	<!-- Clear All Data Action -->
+	<Action id="clearAllData" deviceFilter="self">
+		<Name>Clear All Data</Name>
+		<CallbackMethod>clearAllData</CallbackMethod>
+		<ConfigUI>
+			<Field id="deviceId" type="menu">
+				<Label>Device:</Label>
+				<List class="self" filter="" method="getDeviceList"/>
+			</Field>
+			<Field id="confirmClear" type="checkbox" defaultValue="false">
+				<Label>Confirm clear all data:</Label>
+				<Description>Check this box to confirm you want to clear ALL data from this device.</Description>
+			</Field>
+		</ConfigUI>
+	</Action>
+	
+	<!-- Clear Day Data Action -->
+	<Action id="clearDayData" deviceFilter="self.activity,self.nutrition,self.bodyMeasurements,self.heart,self.respiratory,self.sleep,self.vitals,self.other">
+		<Name>Clear Day Data</Name>
+		<CallbackMethod>clearDayData</CallbackMethod>
+		<ConfigUI>
+			<Field id="deviceId" type="menu">
+				<Label>Device:</Label>
+				<List class="self" filter="self.activity,self.nutrition,self.bodyMeasurements,self.heart,self.respiratory,self.sleep,self.vitals,self.other" method="getDeviceList"/>
+			</Field>
+			<Field id="dayToClear" type="menu" defaultValue="day01">
+				<Label>Day to Clear:</Label>
+				<List>
+					<Option value="day01">Day 01 (Most Recent)</Option>
+					<Option value="day02">Day 02 (Yesterday)</Option>
+					<Option value="day03">Day 03 (Day Before)</Option>
+				</List>
+			</Field>
+			<Field id="confirmClear" type="checkbox" defaultValue="false">
+				<Label>Confirm clear day data:</Label>
+				<Description>Check this box to confirm you want to clear data for the selected day.</Description>
+			</Field>
+		</ConfigUI>
+	</Action>
+</Actions>
